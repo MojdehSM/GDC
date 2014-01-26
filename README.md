@@ -1,4 +1,2 @@
-GDC
-===
-
-GDC prject
+Gestion-de-donn-es-complexes
+============================

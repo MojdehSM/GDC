@@ -1,0 +1,283 @@
+@prefix ville: <http://localhost/ville#> .
+@prefix db: <http://localhost/db#> .
+@prefix vocab: <http://localhost/vocab#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+
+
+ville:database a d2rq:Database;
+	d2rq:jdbcDriver "com.mysql.jdbc.Driver";
+	d2rq:jdbcDSN "jdbc:mysql://localhost:3306/d2rq";
+	d2rq:username "root";
+	d2rq:password "mojdeh";
+	jdbc:autoReconnect "true";
+	jdbc:zeroDateTimeBehavior "convertToNull";
+	.
+
+
+
+ville:cog_r_cl
+      a       rdf:Property  ;
+      rdfs:domain ville:cog_r ;
+      
+      rdfs:label "cog_r_cl" ;
+      rdfs:range xsd:string .
+
+ville:cog_r_codeInsee
+      a       rdf:Property  ;
+      rdfs:domain ville:cog_r ;
+      
+      rdfs:label "cog_r_codeInsee" ;
+      rdfs:range xsd:string .
+
+ville:cog_r_codeReg
+      a       rdf:Property  ;
+      rdfs:domain ville:cog_r ;
+      
+      rdfs:label "cog_r_codeReg" ;
+      rdfs:range xsd:string .
+
+ville:localite_codeinsee
+      a       rdf:Property  ;
+      rdfs:domain ville:localite ;
+      
+      rdfs:label "localite_codeinsee" ;
+      rdfs:range xsd:string .
+
+ville:impot_nbreRedevable
+      a       rdf:Property  ;
+      rdfs:domain ville:impot ;
+      
+      rdfs:label "impot_nbreRedevable" ;
+      rdfs:range xsd:integer .
+
+ville:departement_nccenr
+      a       rdf:Property  ;
+      rdfs:domain ville:departement ;
+      
+      rdfs:label "departement_nccenr" ;
+      rdfs:range xsd:string .
+
+ville:region_cheflieu
+      a       rdf:Property  ;
+      rdfs:domain ville:region ;
+      
+      rdfs:label "region_cheflieu" ;
+      rdfs:range xsd:string .
+
+ville:localite_typeLocalite
+      a       rdf:Property  ;
+      rdfs:domain ville:localite ;
+      
+      rdfs:label "localite_typeLocalite" ;
+      rdfs:range xsd:string .
+
+ville:impot_annee
+      a       rdf:Property  ;
+      rdfs:domain ville:impot ;
+      
+      rdfs:label "impot_annee" ;
+      rdfs:range xsd:integer .
+
+ville:arrondissement_municipal
+      a       owl:Class  ;
+      
+      rdfs:label "arrondissement_municipal" .
+
+ville:cog_r_artmaj
+      a       rdf:Property  ;
+      rdfs:domain ville:cog_r ;
+      
+      rdfs:label "cog_r_artmaj" ;
+      rdfs:range xsd:string .
+
+ville:region_region
+      a       rdf:Property  ;
+      rdfs:domain ville:region ;
+      
+      rdfs:label "region_region" ;
+      rdfs:range xsd:string .
+
+ville:cog_r_codeCommune
+      a       rdf:Property  ;
+      rdfs:domain ville:cog_r ;
+      
+      rdfs:label "cog_r_codeCommune" ;
+      rdfs:range xsd:string .
+
+ville:impot_CodeInsee
+      a       rdf:Property  ;
+      rdfs:domain ville:impot ;
+      
+      rdfs:label "impot_CodeInsee" ;
+      rdfs:range xsd:string .
+
+ville:departement_departement
+      a       rdf:Property  ;
+      rdfs:domain ville:departement ;
+      
+      rdfs:label "departement_departement" ;
+      rdfs:range xsd:string .
+
+ville:cog_r_ar
+      a       rdf:Property  ;
+      rdfs:domain ville:cog_r ;
+      
+      rdfs:label "cog_r_ar" ;
+      rdfs:range xsd:string .
+
+ville:arrondissement_municipal_codeCommune
+      a       rdf:Property  ;
+      rdfs:domain ville:arrondissement_municipal ;
+      
+      rdfs:label "arrondissement_municipal_codeCommune" ;
+      rdfs:range xsd:string .
+
+ville:cog_r
+      a       owl:Class  ;
+      
+      rdfs:label "cog_r" .
+
+ville:cog_r_ncc
+      a       rdf:Property  ;
+      rdfs:domain ville:cog_r ;
+      
+      rdfs:label "cog_r_ncc" ;
+      rdfs:range xsd:string .
+
+ville:departement_ncc
+      a       rdf:Property  ;
+      rdfs:domain ville:departement ;
+      
+      rdfs:label "departement_ncc" ;
+      rdfs:range xsd:string .
+
+ville:arrondissement_municipal_codeInsee
+      a       rdf:Property  ;
+      rdfs:domain ville:arrondissement_municipal ;
+      
+      rdfs:label "arrondissement_municipal_codeInsee" ;
+      rdfs:range xsd:string .
+
+ville:departement_region
+      a       rdf:Property  ;
+      rdfs:domain ville:departement ;
+      
+      rdfs:label "departement_region" ;
+      rdfs:range xsd:string .
+
+ville:cog_r_nccenr
+      a       rdf:Property  ;
+      rdfs:domain ville:cog_r ;
+      
+      rdfs:label "cog_r_nccenr" ;
+      rdfs:range xsd:string .
+
+ville:region
+      a       owl:Class  ;
+      
+      rdfs:label "region" .
+
+ville:region_tncc
+      a       rdf:Property  ;
+      rdfs:domain ville:region ;
+      
+      rdfs:label "region_tncc" ;
+      rdfs:range xsd:string .
+
+ville:impot_CodeImp
+      a       rdf:Property  ;
+      rdfs:domain ville:impot ;
+      
+      rdfs:label "impot_CodeImp" ;
+      rdfs:range xsd:integer .
+
+ville:cog_r_cdc
+      a       rdf:Property  ;
+      rdfs:domain ville:cog_r ;
+      
+      rdfs:label "cog_r_cdc" ;
+      rdfs:range xsd:string .
+
+
+ville:departement_cheflieu
+      a       rdf:Property  ;
+      rdfs:domain ville:departement ;
+      
+      rdfs:label "departement_cheflieu" ;
+      rdfs:range xsd:string .
+
+ville:region_nccenr
+      a       rdf:Property  ;
+      rdfs:domain ville:region ;
+      
+      rdfs:label "region_nccenr" ;
+      rdfs:range xsd:string .
+
+ville:arrondissement_municipal_narm
+      a       rdf:Property  ;
+      rdfs:domain ville:arrondissement_municipal ;
+      
+      rdfs:label "arrondissement_municipal_narm" ;
+      rdfs:range xsd:string .
+
+ville:impot_ImpotMoyen
+      a       rdf:Property  ;
+      rdfs:domain ville:impot ;
+      
+      rdfs:label "impot_ImpotMoyen" ;
+      rdfs:range xsd:double .
+
+ville:impot_PatrimoineM
+      a       rdf:Property  ;
+      rdfs:domain ville:impot ;
+      
+      rdfs:label "impot_PatrimoineM" ;
+      rdfs:range xsd:double .
+
+ville:cog_r_ct
+      a       rdf:Property  ;
+      rdfs:domain ville:cog_r ;
+      
+      rdfs:label "cog_r_ct" ;
+      rdfs:range xsd:string .
+
+ville:departement
+      a       owl:Class  ;
+      
+      rdfs:label "departement" .
+
+ville:region_ncc
+      a       rdf:Property  ;
+      rdfs:domain ville:region ;
+      
+      rdfs:label "region_ncc" ;
+      rdfs:range xsd:string .
+
+ville:cog_r_codeDep
+      a       rdf:Property  ;
+      rdfs:domain ville:cog_r ;
+      
+      rdfs:label "cog_r_codeDep" ;
+      rdfs:range xsd:string .
+
+ville:impot
+      a       owl:Class  ;
+      
+      rdfs:label "impot" .
+
+ville:localite
+      a       owl:Class  ;
+      
+      rdfs:label "localite" .
+
+ville:departement_tncc
+      a       rdf:Property  ;
+      rdfs:domain ville:departement ;
+      
+      rdfs:label "departement_tncc" ;
+      rdfs:range xsd:string .

@@ -1,0 +1,189 @@
+@prefix ville: <http://localhost/ville#> .
+@prefix db: <http://localhost/db#> .
+@prefix vocab: <vocab/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+
+ville:database a d2rq:Database;
+	d2rq:jdbcDriver "com.mysql.jdbc.Driver";
+	d2rq:jdbcDSN "jdbc:mysql://localhost:3306/d2rq";
+	d2rq:username "root";
+	d2rq:password "mojdeh";
+	jdbc:autoReconnect "true";
+	jdbc:zeroDateTimeBehavior "convertToNull";
+	.
+
+# Table cog_r
+ville:cog_r a d2rq:ClassMap;
+	d2rq:dataStorage ville:database;
+	d2rq:uriPattern "cog_r/@@cog_r.codeInsee|urlify@@";
+	d2rq:class vocab:cog_r;
+	d2rq:classDefinitionLabel "cog_r";
+	.
+ville:cog_r__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:cog_r;
+	d2rq:property rdfs:label;
+	d2rq:pattern "cog_r #@@cog_r.codeInsee@@";
+	.
+ville:cog_r_codeInsee a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:cog_r;
+	d2rq:property vocab:cog_r_codeInsee;
+	d2rq:propertyDefinitionLabel "cog_r codeInsee";
+	d2rq:column "cog_r.codeInsee";
+	.
+ville:cog_r_cdc a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:cog_r;
+	d2rq:property vocab:cog_r_cdc;
+	d2rq:propertyDefinitionLabel "cog_r cdc";
+	d2rq:column "cog_r.cdc";
+	.
+ville:cog_r_cl a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:cog_r;
+	d2rq:property vocab:cog_r_cl;
+	d2rq:propertyDefinitionLabel "cog_r cl";
+	d2rq:column "cog_r.cl";
+	.
+ville:cog_r_codeReg a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:cog_r;
+	d2rq:property vocab:cog_r_codeReg;
+	d2rq:propertyDefinitionLabel "cog_r codeReg";
+	d2rq:column "cog_r.codeReg";
+	.
+ville:cog_r_codeDep a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:cog_r;
+	d2rq:property vocab:cog_r_codeDep;
+	d2rq:propertyDefinitionLabel "cog_r codeDep";
+	d2rq:column "cog_r.codeDep";
+	.
+ville:cog_r_codeCommune a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:cog_r;
+	d2rq:property vocab:cog_r_codeCommune;
+	d2rq:propertyDefinitionLabel "cog_r codeCommune";
+	d2rq:column "cog_r.codeCommune";
+	.
+ville:cog_r_ar a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:cog_r;
+	d2rq:property vocab:cog_r_ar;
+	d2rq:propertyDefinitionLabel "cog_r ar";
+	d2rq:column "cog_r.ar";
+	.
+ville:cog_r_ct a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:cog_r;
+	d2rq:property vocab:cog_r_ct;
+	d2rq:propertyDefinitionLabel "cog_r ct";
+	d2rq:column "cog_r.ct";
+	.
+ville:cog_r_artmaj a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:cog_r;
+	d2rq:property vocab:cog_r_artmaj;
+	d2rq:propertyDefinitionLabel "cog_r artmaj";
+	d2rq:column "cog_r.artmaj";
+	.
+ville:cog_r_ncc a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:cog_r;
+	d2rq:property vocab:cog_r_ncc;
+	d2rq:propertyDefinitionLabel "cog_r ncc";
+	d2rq:column "cog_r.ncc";
+	.
+ville:cog_r_nccenr a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:cog_r;
+	d2rq:property vocab:cog_r_nccenr;
+	d2rq:propertyDefinitionLabel "cog_r nccenr";
+	d2rq:column "cog_r.nccenr";
+	.
+
+# Table departement
+ville:departement a d2rq:ClassMap;
+	d2rq:dataStorage ville:database;
+	d2rq:uriPattern "departement/@@departement.departement|urlify@@";
+	d2rq:class vocab:departement;
+	d2rq:classDefinitionLabel "departement";
+	.
+ville:departement__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:departement;
+	d2rq:property rdfs:label;
+	d2rq:pattern "departement #@@departement.departement@@";
+	.
+ville:departement_region a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:departement;
+	d2rq:property vocab:departement_region;
+	d2rq:propertyDefinitionLabel "departement region";
+	d2rq:column "departement.region";
+	.
+ville:departement_departement a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:departement;
+	d2rq:property vocab:departement_departement;
+	d2rq:propertyDefinitionLabel "departement departement";
+	d2rq:column "departement.departement";
+	.
+ville:departement_cheflieu a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:departement;
+	d2rq:property vocab:departement_cheflieu;
+	d2rq:propertyDefinitionLabel "departement cheflieu";
+	d2rq:column "departement.cheflieu";
+	.
+ville:departement_tncc a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:departement;
+	d2rq:property vocab:departement_tncc;
+	d2rq:propertyDefinitionLabel "departement tncc";
+	d2rq:column "departement.tncc";
+	.
+ville:departement_ncc a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:departement;
+	d2rq:property vocab:departement_ncc;
+	d2rq:propertyDefinitionLabel "departement ncc";
+	d2rq:column "departement.ncc";
+	.
+ville:departement_nccenr a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:departement;
+	d2rq:property vocab:departement_nccenr;
+	d2rq:propertyDefinitionLabel "departement nccenr";
+	d2rq:column "departement.nccenr";
+	.
+
+# Table region
+ville:region a d2rq:ClassMap;
+	d2rq:dataStorage ville:database;
+	d2rq:uriPattern "region/@@region.region|urlify@@";
+	d2rq:class vocab:region;
+	d2rq:classDefinitionLabel "region";
+	.
+ville:region__label a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:region;
+	d2rq:property rdfs:label;
+	d2rq:pattern "region #@@region.region@@";
+	.
+ville:region_region a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:region;
+	d2rq:property vocab:region_region;
+	d2rq:propertyDefinitionLabel "region region";
+	d2rq:column "region.region";
+	.
+ville:region_cheflieu a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:region;
+	d2rq:property vocab:region_cheflieu;
+	d2rq:propertyDefinitionLabel "region cheflieu";
+	d2rq:column "region.cheflieu";
+	.
+ville:region_tncc a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:region;
+	d2rq:property vocab:region_tncc;
+	d2rq:propertyDefinitionLabel "region tncc";
+	d2rq:column "region.tncc";
+	.
+ville:region_ncc a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:region;
+	d2rq:property vocab:region_ncc;
+	d2rq:propertyDefinitionLabel "region ncc";
+	d2rq:column "region.ncc";
+	.
+ville:region_nccenr a d2rq:PropertyBridge;
+	d2rq:belongsToClassMap ville:region;
+	d2rq:property vocab:region_nccenr;
+	d2rq:propertyDefinitionLabel "region nccenr";
+	d2rq:column "region.nccenr";
+	.
+

@@ -1,0 +1,75 @@
+1-
+
+SELECT DISTINCT ?villename ?regionname WHERE {
+  ?regobj vocab:region_region ?idreg . 
+  ?comobject vocab:cog_r_codeReg ?codereg . FILTER (?idreg = ?codereg).
+  ?comobject vocab:cog_r_ncc ?villename .
+  ?regobj vocab:region_ncc ?regionname  
+ }
+LIMIT 100
+
+
+2-
+
+SELECT DISTINCT ?villename WHERE {
+  ?comobject vocab:cog_r_codeInsee ?inseecom . 
+  ?comobject vocab:cog_r_codeReg "91" .
+  ?comobject vocab:cog_r_ncc ?villename .
+ }
+
+
+3-
+SELECT DISTINCT ?depname  (count(distinct ?comobj) as ?numbercom)  WHERE {
+  ?depobj vocab:departement_departement ?iddep . 
+  ?depobj vocab:departement_ncc ?depname .
+  ?comobj vocab:cog_r_codeDep ?iddep
+ }
+GROUP BY ?depname
+
+
+4-
+SELECT DISTINCT ?regionname ?villename WHERE {
+  ?regionobj vocab:region_cheflieu ?chefreg . 
+  ?regionobj vocab:region_ncc ?regionname . 
+  ?comobj vocab:cog_r_codeInsee ?chefreg .
+  ?comobj vocab:cog_r_ncc ?villename
+}
+
+5-
+SELECT DISTINCT ?localiteename ?DepName ?RegName  WHERE {
+  ?localiteeibj vocab:localite_codeinsee ?localiteecode .
+  ?impotobj  vocab:impot_CodeInsee ?localiteecode .
+  ?arrondissement  vocab:arrondissement_municipal_codeInsee ?localiteecode . 
+  ?arrondissement  vocab:arrondissement_municipal_codeCommune ?communecodeinsee .
+  ?communeobj  vocab:cog_r_codeInsee ?communecodeinsee .
+  ?communeobj  vocab:cog_r_codeReg ?codeReg .
+  ?communeobj  vocab:cog_r_codeDep ?codeDep .
+  ?regionobj vocab:region_region ?codeReg .
+  ?depobj vocab:departement_departement ?codeDep .
+  ?arrondissement vocab:arrondissement_municipal_narm ?localiteename .
+  ?depobj vocab:departement_ncc ?DepName .
+  ?regionobj vocab:region_ncc ?RegName .
+}
+LIMIT 100
+
+
+6- Nombre d'arrondissement par commune
+SELECT DISTINCT ?comName (count(distinct ?arrondissement) as ?numberArr)  WHERE {
+  ?arrondissement  vocab:arrondissement_municipal_codeCommune ?communecodeinsee .
+  ?communeobj  vocab:cog_r_codeInsee ?communecodeinsee .
+  ?communeobj vocab:cog_r_ncc ?comName .
+}
+GROUP BY ?comName
+LIMIT 100
+
+
+
+
+7- NBR redevable par Dep
+
+
+
+
+
+
+

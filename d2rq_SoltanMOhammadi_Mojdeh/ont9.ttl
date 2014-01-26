@@ -1,0 +1,286 @@
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix france:  <http://localhost/france#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix db: 	 <http://localhost/db#> .
+@prefix d2rq: 	 <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix jdbc: 	 <http://d2rq.org/terms/jdbc/> .
+
+
+
+france:database a d2rq:Database;
+	d2rq:jdbcDriver "com.mysql.jdbc.Driver";
+	d2rq:jdbcDSN "jdbc:mysql://localhost:3306/d2rq";
+	d2rq:username "root";
+	d2rq:password "mojdeh";
+	jdbc:autoReconnect "true";
+	jdbc:zeroDateTimeBehavior "convertToNull";
+	.
+
+
+france:cog_r_cl
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:cog_r ;
+      
+      rdfs:label "cog_r_cl" ;
+      rdfs:range xsd:string .
+
+france:cog_r_codeInsee
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:cog_r ;
+      
+      rdfs:label "cog_r_codeInsee" ;
+      rdfs:range xsd:string .
+
+france:cog_r_codeReg
+      a       rdf:Property , owl:ObjectProperty ;
+      rdfs:domain france:cog_r ;
+      
+      rdfs:label "cog_r_codeReg" ;
+      rdfs:range france:region .
+
+france:localite_codeinsee
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:localite ;
+      
+      rdfs:label "localite_codeinsee" ;
+      rdfs:range xsd:string .
+
+france:impot_nbreRedevable
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:impot ;
+      
+      rdfs:label "impot_nbreRedevable" ;
+      rdfs:range xsd:integer .
+
+france:departement_nccenr
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:departement ;
+      
+      rdfs:label "departement_nccenr" ;
+      rdfs:range xsd:string .
+
+france:region_cheflieu
+      a       rdf:Property , owl:ObjectProperty ;
+      rdfs:domain france:region ;
+      
+      rdfs:label "region_cheflieu" ;
+      rdfs:range france:cog_r .
+
+france:localite_typeLocalite
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:localite ;
+      
+      rdfs:label "localite_typeLocalite" ;
+      rdfs:range xsd:string .
+
+france:impot_annee
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:impot ;
+      
+      rdfs:label "impot_annee" ;
+      rdfs:range xsd:integer .
+
+france:arrondissement_municipal
+      a       owl:Class , rdfs:Class ;
+      
+      rdfs:label "arrondissement_municipal" .
+
+france:cog_r_artmaj
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:cog_r ;
+      
+      rdfs:label "cog_r_artmaj" ;
+      rdfs:range xsd:string .
+
+france:region_region
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:region ;
+      
+      rdfs:label "region_region" ;
+      rdfs:range xsd:string .
+
+france:cog_r_codeCommune
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:cog_r ;
+      
+      rdfs:label "cog_r_codeCommune" ;
+      rdfs:range xsd:string .
+
+france:impot_CodeInsee
+      a       rdf:Property , owl:ObjectProperty ;
+      rdfs:domain france:impot ;
+      
+      rdfs:label "impot_CodeInsee" ;
+      rdfs:range france:localite .
+
+france:departement_departement
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:departement ;
+      
+      rdfs:label "departement_departement" ;
+      rdfs:range xsd:string .
+
+france:cog_r_ar
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:cog_r ;
+      
+      rdfs:label "cog_r_ar" ;
+      rdfs:range xsd:string .
+
+france:arrondissement_municipal_codeCommune
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:arrondissement_municipal ;
+      
+      rdfs:label "arrondissement_municipal_codeCommune" ;
+      rdfs:range xsd:string .
+
+france:cog_r
+      a       owl:Class , rdfs:Class ;
+      
+      rdfs:label "cog_r" .
+
+france:cog_r_ncc
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:cog_r ;
+      
+      rdfs:label "cog_r_ncc" ;
+      rdfs:range xsd:string .
+
+france:departement_ncc
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:departement ;
+      
+      rdfs:label "departement_ncc" ;
+      rdfs:range xsd:string .
+
+france:arrondissement_municipal_codeInsee
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:arrondissement_municipal ;
+      
+      rdfs:label "arrondissement_municipal_codeInsee" ;
+      rdfs:range xsd:string .
+
+france:departement_region
+      a       rdf:Property , owl:ObjectProperty ;
+      rdfs:domain france:departement ;
+      
+      rdfs:label "departement_region" ;
+      rdfs:range france:region .
+
+france:cog_r_nccenr
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:cog_r ;
+      
+      rdfs:label "cog_r_nccenr" ;
+      rdfs:range xsd:string .
+
+france:region
+      a       owl:Class , rdfs:Class ;
+      
+      rdfs:label "region" .
+
+france:region_tncc
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:region ;
+      
+      rdfs:label "region_tncc" ;
+      rdfs:range xsd:string .
+
+france:impot_CodeImp
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:impot ;
+      
+      rdfs:label "impot_CodeImp" ;
+      rdfs:range xsd:integer .
+
+france:cog_r_cdc
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:cog_r ;
+      
+      rdfs:label "cog_r_cdc" ;
+      rdfs:range xsd:string .
+
+france:     a       owl:Ontology ;
+      dc:creator "D2RQ Mapping Generator" ;
+      owl:imports dc: .
+
+france:departement_cheflieu
+      a       rdf:Property , owl:ObjectProperty ;
+      rdfs:domain france:departement ;
+      
+      rdfs:label "departement_cheflieu" ;
+      rdfs:range france:cog_r .
+
+france:region_nccenr
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:region ;
+      
+      rdfs:label "region_nccenr" ;
+      rdfs:range xsd:string .
+
+france:arrondissement_municipal_narm
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:arrondissement_municipal ;
+      
+      rdfs:label "arrondissement_municipal_narm" ;
+      rdfs:range xsd:string .
+
+france:impot_ImpotMoyen
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:impot ;
+      
+      rdfs:label "impot_ImpotMoyen" ;
+      rdfs:range xsd:double .
+
+france:impot_PatrimoineM
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:impot ;
+      
+      rdfs:label "impot_PatrimoineM" ;
+      rdfs:range xsd:double .
+
+france:cog_r_ct
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:cog_r ;
+      
+      rdfs:label "cog_r_ct" ;
+      rdfs:range xsd:string .
+
+france:departement
+      a       owl:Class , rdfs:Class ;
+      
+      rdfs:label "departement" .
+
+france:region_ncc
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:region ;
+      
+      rdfs:label "region_ncc" ;
+      rdfs:range xsd:string .
+
+france:cog_r_codeDep
+      a       rdf:Property , owl:ObjectProperty ;
+      rdfs:domain france:cog_r ;
+      
+      rdfs:label "cog_r_codeDep" ;
+      rdfs:range france:departement .
+
+france:impot
+      a       owl:Class , rdfs:Class ;
+      
+      rdfs:label "impot" .
+
+france:localite
+      a       owl:Class , rdfs:Class ;
+      
+      rdfs:label "localite" .
+
+france:departement_tncc
+      a       rdf:Property , owl:DatatypeProperty ;
+      rdfs:domain france:departement ;
+      
+      rdfs:label "departement_tncc" ;
+      rdfs:range xsd:string .
